@@ -1,10 +1,16 @@
+import CartMini from "./Components/cartMini/cartMini";
 import Catagories from "./Components/Catagories";
-
+import Footer from "./Components/Footer";
+import Header from './Components/Header'
+import Products from "./Components/Products";
 const App = () => {
   return (
     <>
-      <h1>hi</h1>
+      <Header />
+      <CartMini />
       <Catagories />
+      <Products />
+      <Footer />
     </>
   )
 }
