@@ -3,8 +3,8 @@ import CartMini from '../cartMini/cartMini';
 import { useDispatch, useSelector } from 'react-redux';
 import { showCart } from '../../store/actions';
 const Header = () => {
-  const { cartMini } = useSelector((state) => state);
-  const showing = cartMini.inCart;
+  const { cart } = useSelector((state) => state);
+  const showing = cart;
   const dispatch = useDispatch();
   const handleClick = () => {
     dispatch(showCart());
@@ -23,7 +23,7 @@ const Header = () => {
             <Typography variant='h6' component='div' sx={{ flexGrow: 1 }}>
               Super Cool Store
             </Typography>
-            <p id='cart'>CART ({showing.length})</p>
+            <p id='cart'>CART</p>
           </Toolbar>
         </AppBar>
       </Box>

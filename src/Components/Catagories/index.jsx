@@ -1,18 +1,21 @@
-import { connect } from 'react-redux';
-import * as React from 'react';
+import { useEffect } from 'react';
 import Link from '@mui/material/Link';
 import { styled } from '@mui/material/styles';
-import Box from '@mui/material/Box';
-import Paper from '@mui/material/Paper';
-import Grid from '@mui/material/Grid';
-import Button from '@mui/material/Button';
+import { Box, Paper, Grid, Button } from '@mui/material/';
 import { changeDisplay } from '../../store/actions';
 import { useDispatch, useSelector } from 'react-redux';
+import { getCategories } from '../../store/catagories';
+import { categoryChange } from '../../store/products';
 
 const Categories = (props) => {
   const dispatch = useDispatch();
-  const { categories } = useSelector((state) => state);
+  const { categories } = useSelector((state) => state.categories);
+  console.log(categories);
+  const { products } = useSelector((state) => state.products);
 
+  useEffect(() => {
+    dispatch(getCategories());
+  }, []);
   const Item = styled(Paper)(({ theme }) => ({
     backgroundColor: theme.palette.mode === 'dark' ? '#1A2027' : '#fff',
     ...theme.typography.body2,
@@ -30,9 +33,11 @@ const Categories = (props) => {
               <Grid item xs={4}>
                 <Item>
                   <Button
-                    onClick={() => dispatch(changeDisplay(category.name))}
+                    onClick={() =>
+                      dispatch(categoryChange(category.name, products))
+                    }
                   >
-                    {category.displayName}
+                    {category.name}
                   </Button>
                 </Item>
               </Grid>

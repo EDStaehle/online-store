@@ -1,16 +1,12 @@
-const initialState = {
-  activeCategory: ''
-};
+const initialState = []
 function activeReducer(state = initialState, action) {
 
-  const { type, payload } = action
+  const { type, categories } = action
+  console.log(categories)
   switch (type) {
     case 'CHANGE':
-      return {
-        ...state,
-        activeCategory: payload,
-
-      }
+      console.log([state, categories])
+      return [...state, ...categories]
     default:
       return state;
   }

@@ -1,8 +1,9 @@
 
 export const changeDisplay = (categories) => {
+  console.log(categories, 'faaaaaaaaaaaaaag')
   return {
     type: 'CHANGE',
-    payload: categories
+    categories
   }
 }
 export const clear = () => {
@@ -24,3 +25,10 @@ export const showCart = () => {
     payload: {}
   }
 }
+export const removeItem = (product) => {
+  return {
+    type: 'REMOVE',
+    payload: product
+  }
+}
+
