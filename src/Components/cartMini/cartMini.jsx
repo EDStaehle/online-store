@@ -1,5 +1,6 @@
-import { connect } from 'react-redux';
-import * as React from 'react';
+import React from 'react';
+import { useDispatch, useSelector } from 'react-redux';
+import { removeItemFromCart } from '../../store/cartMini';
 import {
   Paper,
   Card,
@@ -10,23 +11,13 @@ import {
   Box,
 } from '@mui/material';
 
-import { useDispatch, useSelector } from 'react-redux';
-import { addItem } from '../../store/actions';
-
 const CartMini = () => {
-  const { cartMini } = useSelector((state) => state);
-  console.log(cartMini.inCart, 'you are here');
+  const { cart } = useSelector((state) => state.cart);
+  console.log(cart, 'you are here');
   const dispatch = useDispatch();
-  const display = cartMini.inCart.filter(
-    (product) => product.category === cartMini.inCart.category,
-  );
-  console.log(display, 'this is out of the map');
-
-  let header = 'cartMini';
-
   return (
     <>
-      <h2>{header}</h2>
+      <h2>Cart</h2>
       <Box
         sx={{
           display: 'flex',
@@ -43,13 +34,18 @@ const CartMini = () => {
             position: 'static',
           }}
         >
-          {cartMini.inCart.map((product, index) => (
+          {cart.map((product, index) => (
             <article key={`product-${index}`}>
               <p>{product.name}</p>
               <Typography variant='body2' color='text.secondary'>
                 Price: ${product.price}
               </Typography>
-              <Button size='small'>X</Button>
+              <Button
+                size='small'
+                onClick={() => dispatch(removeItemFromCart(product))}
+              >
+                X
+              </Button>
             </article>
           ))}
         </Paper>

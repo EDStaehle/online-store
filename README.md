@@ -1,71 +1,41 @@
-# Getting Started with Create React App
+# Virtual Storefront
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+## Overview
 
-## Available Scripts
+The purview of this React-based application is a virtual storefront, wherein users can peruse and acquire products. The implementation of the application will occur in four stages, with the initial stage focusing on the establishment of the fundamental scaffolding and initial styling of the application. The objective is to create a polished and user-friendly interface for browsing products.
 
-In the project directory, you can run:
+## Installation
 
-### `npm start`
+Initialize the application using create-react-app
+Install Material UI as a dependency.
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+### Technical Requirements
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+Utilize a Redux store to manage the state of categories and items in the store
+Create a visually alluring site utilizing Material UI
+Display a list of categories from state
+Identify the selected category and show a list of products associated with the category
+Create a polished and user-friendly interface
 
-### `npm test`
+### Development Stages
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+Scaffolding and Styling: Establish the fundamental scaffolding and initial styling of the application.
+Add to Cart Feature: Incorporate the "Add to Cart" feature to the application, enabling users to select items and have them persist in their "shopping cart" for subsequent purchase.
+Live API Integration: Link the Virtual Store to a live API so that data is persistent and able to be separately managed.
 
-### `npm run build`
+## Links and Resources
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+Documentation for the application can be found in the README file.
+The link for the production deployment, when applicable, will be provided in the "Links and Resources" section.
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+## day 1
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+![day1](./assets//online-store-day1.png)
 
-### `npm run eject`
+## day2
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+![day2](./assets//online-store-day2.png)
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+## day3
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
-# online-store
+![day3](./assets//online-store-day3.png)
