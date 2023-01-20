@@ -1,26 +1,20 @@
-import { createAction, createReducer } from "@reduxjs/toolkit";
-import axios from "axios";
-
-const GET_CATEGORIES = 'GET_CATEGORIES'
-
-export const setCategories = createAction(GET_CATEGORIES)
-
+import { createSlice } from '@reduxjs/toolkit'
+import axios from 'axios';
 export const getCategories = () => async (dispatch, getState) => {
   let response = await axios.get('https://api-js401.herokuapp.com/api/v1/categories');
-  console.log(response)
-  dispatch(setCategories(response.data.results));
-}
 
-const categoriesReducer = createReducer(
-  {
-    categories: [],
-  },
-  {
-    [GET_CATEGORIES]: (state, action) => {
-      return {
-        categories: action.payload
-      }
+  dispatch(setCategories(response.data.results,));
+}
+const initialState = []
+const categorySlice = createSlice({
+  name: 'categories',
+  initialState,
+  reducers: {
+    setCategories: (state, action) => {
+      return action.payload
     }
-  },
-)
-export default categoriesReducer;
+  }
+})
+
+export const { setCategories } = categorySlice.actions
+export default categorySlice.reducer;

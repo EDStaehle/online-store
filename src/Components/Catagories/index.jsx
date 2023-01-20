@@ -2,16 +2,13 @@ import { useEffect } from 'react';
 import Link from '@mui/material/Link';
 import { styled } from '@mui/material/styles';
 import { Box, Paper, Grid, Button } from '@mui/material/';
-import { changeDisplay } from '../../store/actions';
 import { useDispatch, useSelector } from 'react-redux';
 import { getCategories } from '../../store/catagories';
-import { categoryChange } from '../../store/products';
+import { updateActive } from '../../store/activeCat';
 
 const Categories = (props) => {
   const dispatch = useDispatch();
-  const { categories } = useSelector((state) => state.categories);
-  console.log(categories);
-  const { products } = useSelector((state) => state.products);
+  const { categories, activeCat, products } = useSelector((state) => state);
 
   useEffect(() => {
     dispatch(getCategories());
@@ -34,7 +31,7 @@ const Categories = (props) => {
                 <Item>
                   <Button
                     onClick={() =>
-                      dispatch(categoryChange(category.name, products))
+                      dispatch(updateActive(category.name, products))
                     }
                   >
                     {category.name}

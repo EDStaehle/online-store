@@ -1,15 +1,17 @@
-const initialState = []
-function activeReducer(state = initialState, action) {
+import { createSlice } from '@reduxjs/toolkit'
 
-  const { type, categories } = action
-  console.log(categories)
-  switch (type) {
-    case 'CHANGE':
-      console.log([state, categories])
-      return [...state, ...categories]
-    default:
-      return state;
-  }
+const initialState = {
+  activeCategory: ''
 }
 
-export default activeReducer;
+const activeCatSlice = createSlice({
+  name: 'activeCat',
+  initialState,
+  reducers: {
+    updateActive: (state, action) => {
+      state.activeCategory = action.payload
+    }
+  }
+})
+export const { updateActive } = activeCatSlice.actions;
+export default activeCatSlice.reducer

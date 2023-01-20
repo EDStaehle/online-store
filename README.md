@@ -22,6 +22,7 @@ Create a polished and user-friendly interface
 Scaffolding and Styling: Establish the fundamental scaffolding and initial styling of the application.
 Add to Cart Feature: Incorporate the "Add to Cart" feature to the application, enabling users to select items and have them persist in their "shopping cart" for subsequent purchase.
 Live API Integration: Link the Virtual Store to a live API so that data is persistent and able to be separately managed.
+Integration of Browser Router to have a different page for the routes
 
 ## Links and Resources
 

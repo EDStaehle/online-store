@@ -11,20 +11,23 @@ import {
 } from '@mui/material/';
 import { addToCart } from '../../store/cartMini';
 import { getProducts } from '../../store/products';
+
 const Products = (props) => {
-  const { activeCategory, categoriesProducts } = useSelector(
-    (state) => state.products,
-  );
-  console.log(categoriesProducts);
+  const { products, activeCat } = useSelector((state) => state);
+
   const dispatch = useDispatch();
+  const activeProducts = products.filter(
+    (item) => item.category === activeCat.activeCategory,
+  );
+
   useEffect(() => {
     dispatch(getProducts());
   }, []);
 
   return (
     <>
-      {activeCategory !== ''
-        ? categoriesProducts?.map((product, index) => (
+      {activeProducts !== []
+        ? activeProducts?.map((product, index) => (
             <article key={`product-${index}`}>
               <Grid container spacing={2}>
                 <Grid item xs={3}>
