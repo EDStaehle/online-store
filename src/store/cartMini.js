@@ -10,9 +10,13 @@ export const removeItem = createAction(REMOVE_FROM_CART)
 
 export const addToCart = (product) => async (dispatch, getState) => {
   let updatedCart = { ...product }
-  updatedCart.inStock = updatedCart.inStock - 1
-  let response = await axios.put(`https://api-js401.herokuapp.com/api/v1/products/${updatedCart._id}`, updatedCart);
-  dispatch(addItem(response.data))
+
+  if (updatedCart.inStock > 0) {
+    updatedCart.inStock = updatedCart.inStock - 1
+    let response = await axios.put(`https://api-js401.herokuapp.com/api/v1/products/${updatedCart._id}`, updatedCart);
+    dispatch(addItem(response.data))
+
+  }
 }
 export const removeItemFromCart = (product) => async (dispatch, getState) => {
   let updatedCart = { ...product };
